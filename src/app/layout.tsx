@@ -1,5 +1,6 @@
 import "./globals.css";
 import { Inter, Space_Grotesk } from "next/font/google";
+import MotionProvider from "@/components/layout/MotionProvider";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -26,7 +27,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${inter.variable} ${spaceGrotesk.variable}`}>
       <body className="bg-background text-foreground font-body antialiased">
-        {children}
+        <MotionProvider>{children}</MotionProvider>
       </body>
     </html>
   );
