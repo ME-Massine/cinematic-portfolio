@@ -4,6 +4,7 @@ import type { Project } from "@/app/content/projects";
 import CaseStudyShell from "./CaseStudyShell";
 import Container from "@/components/layout/Container";
 import { motion } from "framer-motion";
+import MedicalIASection from "@/components/case-studies/sections/MedicalIASection";
 
 type Props = { project: Project };
 
@@ -89,6 +90,7 @@ export default function MedicalOfficeCaseStudy({ project }: Props) {
           </motion.div>
         </Container>
       </section>
+      <MedicalIASection />
     </CaseStudyShell>
   );
 }

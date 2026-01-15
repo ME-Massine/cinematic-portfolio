@@ -4,6 +4,7 @@ import type { Project } from "@/app/content/projects";
 import CaseStudyShell from "./CaseStudyShell";
 import Container from "@/components/layout/Container";
 import { motion } from "framer-motion";
+import AzureConversationSection from "@/components/case-studies/sections/AzureConversationSection";
 
 type Props = { project: Project };
 
@@ -88,6 +89,7 @@ export default function AzureStudentSupportCaseStudy({ project }: Props) {
           </motion.div>
         </Container>
       </section>
+      <AzureConversationSection />
     </CaseStudyShell>
   );
 }
