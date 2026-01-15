@@ -62,14 +62,14 @@ export default function Navbar() {
           </a>
         </div>
       </Container>
-      <div className="relative h-0.5 w-full bg-white/5">
+      <div className="relative h-0.5 w-full overflow-hidden bg-white/5">
         <motion.div
-          style={{ opacity: barOpacity }}
-          className="relative h-[2px] w-full bg-white/5"
-        />
-        <motion.div
-          style={{ opacity: barOpacity }}
-          className="relative h-[2px] w-full bg-white/5"
+          style={{
+            opacity: barOpacity,
+            scaleX: progress,
+            transformOrigin: "0% 50%",
+          }}
+          className="h-full w-full bg-white/60"
         />
       </div>
     </motion.header>
