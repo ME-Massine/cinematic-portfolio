@@ -2,6 +2,9 @@
 
 import { motion } from "framer-motion";
 import Container from "@/components/layout/Container";
+import dynamic from "next/dynamic";
+
+const HeroScene = dynamic(() => import("./HeroScene"), { ssr: false });
 
 const fadeUp = {
   hidden: { opacity: 0, y: 18, filter: "blur(6px)" },
@@ -14,9 +17,9 @@ export default function Hero() {
       {/* Ambient background */}
       <div className="pointer-events-none absolute inset-0">
         <div className="absolute inset-0 bg-background" />
-        <div className="absolute left-[-20%] top-[-30%] h-[520px] w-[520px] rounded-full bg-accent/10 blur-3xl" />
-        <div className="absolute right-[-15%] top-[10%] h-[420px] w-[420px] rounded-full bg-accent/10 blur-3xl" />
-        <div className="absolute inset-0 opacity-[0.06] [background-image:radial-gradient(#ffffff_1px,transparent_1px)] [background-size:24px_24px]" />
+        <div className="absolute left-[-20%] top-[-30%] h-130 w-130 rounded-full bg-accent/10 blur-3xl" />
+        <div className="absolute right-[-15%] top-[10%] h-105 w-105 rounded-full bg-accent/10 blur-3xl" />
+        <div className="absolute inset-0 opacity-[0.06] bg-[radial-gradient(#ffffff_1px,transparent_1px)] bg-size-[24px_24px]" />
       </div>
 
       <Container>
@@ -106,9 +109,12 @@ export default function Hero() {
                 <div className="absolute inset-0 bg-linear-to-b from-white/5 to-transparent" />
               </div>
 
-              <div className="relative flex h-full items-center justify-center text-sm text-muted">
-                3D scene goes here
+              <div className="absolute inset-0">
+                <HeroScene />
               </div>
+
+              <div className="pointer-events-none absolute inset-0 bg-linear-to-b from-white/5 to-transparent" />
+              <div className="pointer-events-none absolute inset-0 opacity-40 mask-[radial-gradient(circle_at_50%_45%,black_40%,transparent_70%)] bg-accent/10" />
             </motion.div>
           </div>
         </div>
