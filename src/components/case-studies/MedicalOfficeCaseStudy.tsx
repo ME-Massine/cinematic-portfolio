@@ -20,9 +20,8 @@ export default function MedicalOfficeCaseStudy({ project }: Props) {
         <Container>
           <motion.div
             initial="hidden"
-            whileInView="show"
-            viewport={{ once: true, margin: "-120px" }}
-            transition={{ staggerChildren: 0.08 }}
+            animate="show"
+            transition={{ staggerChildren: 0.08, delayChildren: 0.08 }}
             className="grid gap-8 md:grid-cols-12"
           >
             <motion.div
