@@ -18,9 +18,9 @@ export default function TransitionLayout({
         exit: { opacity: 0 },
       }
     : {
-        initial: { opacity: 0, y: 14, filter: "blur(8px)" },
-        animate: { opacity: 1, y: 0, filter: "blur(0px)" },
-        exit: { opacity: 0, y: -14, filter: "blur(8px)" },
+        initial: { opacity: 0, y: 14 },
+        animate: { opacity: 1, y: 0 },
+        exit: { opacity: 0, y: -14 },
       };
 
   const transition = {
@@ -37,7 +37,7 @@ export default function TransitionLayout({
         animate="animate"
         exit="exit"
         transition={transition}
-        style={{ willChange: "transform, opacity, filter" }}
+        style={{ willChange: "transform, opacity" }}
       >
         {children}
       </motion.div>

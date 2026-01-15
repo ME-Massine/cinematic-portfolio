@@ -8,8 +8,8 @@ export default function Contact() {
     <section id="contact" className="relative py-24">
       <Container>
         <motion.div
-          initial={{ opacity: 0, y: 16, filter: "blur(6px)" }}
-          whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+          initial={{ opacity: 0, y: 16 }}
+          whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-120px" }}
           transition={{ duration: 0.7 }}
           className="relative overflow-hidden rounded-3xl border border-white/10 bg-white/5 p-10 backdrop-blur"

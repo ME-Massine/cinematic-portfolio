@@ -11,8 +11,8 @@ import FreelanceHeroMedia from "@/components/case-studies/media/FreelanceHeroMed
 type Props = { project: Project };
 
 const reveal = {
-  hidden: { opacity: 0, y: 18, filter: "blur(6px)" },
-  show: { opacity: 1, y: 0, filter: "blur(0px)" },
+  hidden: { opacity: 0, y: 18 },
+  show: { opacity: 1, y: 0 },
 };
 
 export default function FreelanceHubCaseStudy({ project }: Props) {

@@ -6,8 +6,8 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 
 const card = {
-  hidden: { opacity: 0, y: 18, filter: "blur(6px)" },
-  show: { opacity: 1, y: 0, filter: "blur(0px)" },
+  hidden: { opacity: 0, y: 18 },
+  show: { opacity: 1, y: 0 },
 };
 
 export default function SelectedWork() {

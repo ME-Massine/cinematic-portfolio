@@ -5,7 +5,11 @@ import { Environment } from "@react-three/drei";
 import * as THREE from "three";
 import { useMemo, useRef } from "react";
 
-function Orb() {
+type OrbProps = {
+  paused: boolean;
+};
+
+function Orb({ paused }: OrbProps) {
   const meshRef = useRef<THREE.Mesh>(null);
 
   const geometry = useMemo(() => new THREE.IcosahedronGeometry(1.15, 2), []);
@@ -22,6 +26,7 @@ function Orb() {
   );
 
   useFrame((state, delta) => {
+    if (paused) return;
     const m = meshRef.current;
     if (!m) return;
 
@@ -62,15 +67,20 @@ function Lights() {
   );
 }
 
-export default function HeroScene() {
+type HeroSceneProps = {
+  paused?: boolean;
+};
+
+export default function HeroScene({ paused = false }: HeroSceneProps) {
   return (
     <Canvas
       dpr={[1, 1.8]}
       camera={{ position: [0, 0, 3.4], fov: 42 }}
       gl={{ antialias: true, alpha: true }}
+      frameloop={paused ? "never" : "always"}
     >
       <Lights />
-      <Orb />
+      <Orb paused={paused} />
       <Environment preset="city" />
     </Canvas>
   );

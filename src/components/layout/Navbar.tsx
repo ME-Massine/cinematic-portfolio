@@ -11,8 +11,7 @@ const navItems = [
 ];
 
 export default function Navbar() {
-  const { scrollY } = useScroll();
-  const { scrollYProgress } = useScroll();
+  const { scrollY, scrollYProgress } = useScroll();
   const progress = useSpring(scrollYProgress, {
     stiffness: 120,
     damping: 20,
