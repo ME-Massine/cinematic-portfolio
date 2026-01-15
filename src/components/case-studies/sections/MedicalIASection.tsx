@@ -4,8 +4,8 @@ import Container from "@/components/layout/Container";
 import { motion } from "framer-motion";
 
 const reveal = {
-  hidden: { opacity: 0, y: 18, filter: "blur(6px)" },
-  show: { opacity: 1, y: 0, filter: "blur(0px)" },
+  hidden: { opacity: 0, y: 18 },
+  show: { opacity: 1, y: 0 },
 };
 
 const lanes = [

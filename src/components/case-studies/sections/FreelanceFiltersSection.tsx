@@ -5,8 +5,8 @@ import { motion, AnimatePresence } from "framer-motion";
 import { useMemo, useState } from "react";
 
 const reveal = {
-  hidden: { opacity: 0, y: 18, filter: "blur(6px)" },
-  show: { opacity: 1, y: 0, filter: "blur(0px)" },
+  hidden: { opacity: 0, y: 18 },
+  show: { opacity: 1, y: 0 },
 };
 
 type Tag = "Design" | "Web" | "Mobile" | "AI" | "Brand";
@@ -103,9 +103,9 @@ export default function FreelanceFiltersSection() {
                     <motion.div
                       key={c.name}
                       layout
-                      initial={{ opacity: 0, y: 10, filter: "blur(6px)" }}
-                      animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
-                      exit={{ opacity: 0, y: 10, filter: "blur(6px)" }}
+                      initial={{ opacity: 0, y: 10 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      exit={{ opacity: 0, y: 10 }}
                       transition={{ duration: 0.35 }}
                       className="rounded-2xl border border-white/10 bg-white/5 p-5"
                     >

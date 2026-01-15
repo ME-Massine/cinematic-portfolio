@@ -11,8 +11,8 @@ import AzureHeroMedia from "@/components/case-studies/media/AzureHeroMedia";
 type Props = { project: Project };
 
 const reveal = {
-  hidden: { opacity: 0, y: 18, filter: "blur(6px)" },
-  show: { opacity: 1, y: 0, filter: "blur(0px)" },
+  hidden: { opacity: 0, y: 18 },
+  show: { opacity: 1, y: 0 },
 };
 
 export default function AzureStudentSupportCaseStudy({ project }: Props) {

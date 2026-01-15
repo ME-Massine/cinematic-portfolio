@@ -5,8 +5,8 @@ import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 
 const reveal = {
-  hidden: { opacity: 0, y: 18, filter: "blur(6px)" },
-  show: { opacity: 1, y: 0, filter: "blur(0px)" },
+  hidden: { opacity: 0, y: 18 },
+  show: { opacity: 1, y: 0 },
 };
 
 type StateKey = "idle" | "thinking" | "answering" | "handoff";
@@ -167,8 +167,8 @@ function Bubble({
 
   return (
     <motion.div
-      initial={{ opacity: 0, y: 10, filter: "blur(6px)" }}
-      animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+      initial={{ opacity: 0, y: 10 }}
+      animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
       className={`${base} ${cls}`}
     >

@@ -1,17 +1,28 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, useInView } from "framer-motion";
 import Container from "@/components/layout/Container";
 import dynamic from "next/dynamic";
+import { useEffect, useRef, useState } from "react";
 
 const HeroScene = dynamic(() => import("./HeroScene"), { ssr: false });
 
 const fadeUp = {
-  hidden: { opacity: 0, y: 18, filter: "blur(6px)" },
-  show: { opacity: 1, y: 0, filter: "blur(0px)" },
+  hidden: { opacity: 0, y: 18 },
+  show: { opacity: 1, y: 0 },
 };
 
 export default function Hero() {
+  const sceneRef = useRef<HTMLDivElement>(null);
+  const isInView = useInView(sceneRef, { amount: 0.25 });
+  const [hasEntered, setHasEntered] = useState(false);
+
+  useEffect(() => {
+    if (isInView) {
+      setHasEntered(true);
+    }
+  }, [isInView]);
+
   return (
     <section className="relative overflow-hidden">
       {/* Ambient background */}
@@ -98,7 +109,7 @@ export default function Hero() {
           </div>
 
           {/* Right: 3D placeholder */}
-          <div className="lg:col-span-5">
+          <div className="lg:col-span-5" ref={sceneRef}>
             <motion.div
               initial={{ opacity: 0, scale: 0.98 }}
               animate={{ opacity: 1, scale: 1 }}
@@ -110,7 +121,7 @@ export default function Hero() {
               </div>
 
               <div className="absolute inset-0">
-                <HeroScene />
+                {hasEntered ? <HeroScene paused={!isInView} /> : null}
               </div>
 
               <div className="pointer-events-none absolute inset-0 bg-linear-to-b from-white/5 to-transparent" />
