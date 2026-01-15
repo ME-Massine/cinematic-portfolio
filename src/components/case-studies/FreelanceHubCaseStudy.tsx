@@ -5,6 +5,7 @@ import CaseStudyShell from "./CaseStudyShell";
 import Container from "@/components/layout/Container";
 import { motion } from "framer-motion";
 import FreelanceFiltersSection from "@/components/case-studies/sections/FreelanceFiltersSection";
+import { accentForSlug } from "@/app/lib/theme";
 
 type Props = { project: Project };
 
@@ -14,8 +15,13 @@ const reveal = {
 };
 
 export default function FreelanceHubCaseStudy({ project }: Props) {
+  const theme = accentForSlug(project.slug);
   return (
-    <CaseStudyShell project={project} accentClassName="text-violet-200">
+    <CaseStudyShell
+      project={project}
+      accentClassName={theme.text}
+      glowClassName={theme.glow}
+    >
       <section className="pb-24">
         <Container>
           <motion.div

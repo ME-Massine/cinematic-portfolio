@@ -5,6 +5,7 @@ import CaseStudyShell from "./CaseStudyShell";
 import Container from "@/components/layout/Container";
 import { motion } from "framer-motion";
 import MedicalIASection from "@/components/case-studies/sections/MedicalIASection";
+import { accentForSlug } from "@/app/lib/theme";
 
 type Props = { project: Project };
 
@@ -14,8 +15,13 @@ const reveal = {
 };
 
 export default function MedicalOfficeCaseStudy({ project }: Props) {
+  const theme = accentForSlug(project.slug);
   return (
-    <CaseStudyShell project={project} accentClassName="text-emerald-200">
+    <CaseStudyShell
+      project={project}
+      accentClassName={theme.text}
+      glowClassName={theme.glow}
+    >
       <section className="pb-24">
         <Container>
           <motion.div

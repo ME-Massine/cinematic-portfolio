@@ -7,7 +7,8 @@ import type { Project } from "@/app/content/projects";
 
 type Props = {
   project: Project;
-  accentClassName?: string; // e.g. "text-sky-300"
+  accentClassName?: string;
+  glowClassName?: string;
   children: React.ReactNode;
 };
 
@@ -19,14 +20,23 @@ const fadeUp = {
 export default function CaseStudyShell({
   project,
   accentClassName,
+  glowClassName,
   children,
 }: Props) {
   return (
     <main className="relative">
       <div className="pointer-events-none absolute inset-0">
         <div className="absolute inset-0 bg-background" />
-        <div className="absolute left-[-18%] top-[-25%] h-[520px] w-[520px] rounded-full bg-accent/10 blur-3xl" />
-        <div className="absolute right-[-20%] top-[10%] h-[420px] w-[420px] rounded-full bg-accent/10 blur-3xl" />
+        <div
+          className={`absolute left-[-18%] top-[-25%] h-130 w-130 rounded-full blur-3xl ${
+            glowClassName ?? "bg-accent/10"
+          }`}
+        />
+        <div
+          className={`absolute right-[-20%] top-[10%] h-105 w-105 rounded-full blur-3xl ${
+            glowClassName ?? "bg-accent/10"
+          }`}
+        />
       </div>
 
       <Container>
