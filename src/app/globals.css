@@ -1,3 +1,19 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+
+/* Tailwind v4 theme tokens (this enables bg-background, text-foreground, etc.) */
+@theme {
+  --color-background: #0a0a0a;
+  --color-foreground: #ffffff;
+  --color-muted: #a1a1aa;
+  --color-accent: #38bdf8;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  background: var(--color-background);
+  color: var(--color-foreground);
+}
