@@ -6,6 +6,7 @@ import Container from "@/components/layout/Container";
 import { motion } from "framer-motion";
 import AzureConversationSection from "@/components/case-studies/sections/AzureConversationSection";
 import { accentForSlug } from "@/app/lib/theme";
+import AzureHeroMedia from "@/components/case-studies/media/AzureHeroMedia";
 
 type Props = { project: Project };
 
@@ -21,6 +22,7 @@ export default function AzureStudentSupportCaseStudy({ project }: Props) {
       project={project}
       accentClassName={theme.text}
       glowClassName={theme.glow}
+      heroMedia={<AzureHeroMedia />}
     >
       <section className="pb-24">
         <Container>

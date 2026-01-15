@@ -6,6 +6,7 @@ import Container from "@/components/layout/Container";
 import { motion } from "framer-motion";
 import FreelanceFiltersSection from "@/components/case-studies/sections/FreelanceFiltersSection";
 import { accentForSlug } from "@/app/lib/theme";
+import FreelanceHeroMedia from "@/components/case-studies/media/FreelanceHeroMedia";
 
 type Props = { project: Project };
 
@@ -21,6 +22,7 @@ export default function FreelanceHubCaseStudy({ project }: Props) {
       project={project}
       accentClassName={theme.text}
       glowClassName={theme.glow}
+      heroMedia={<FreelanceHeroMedia />}
     >
       <section className="pb-24">
         <Container>

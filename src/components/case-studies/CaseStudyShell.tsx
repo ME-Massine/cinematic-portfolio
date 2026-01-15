@@ -9,6 +9,7 @@ type Props = {
   project: Project;
   accentClassName?: string;
   glowClassName?: string;
+  heroMedia?: React.ReactNode;
   children: React.ReactNode;
 };
 
@@ -21,6 +22,7 @@ export default function CaseStudyShell({
   project,
   accentClassName,
   glowClassName,
+  heroMedia,
   children,
 }: Props) {
   return (
@@ -75,6 +77,15 @@ export default function CaseStudyShell({
           >
             {project.subtitle}
           </motion.p>
+          {heroMedia ? (
+            <motion.div
+              variants={fadeUp}
+              transition={{ duration: 0.75 }}
+              className="mt-10"
+            >
+              {heroMedia}
+            </motion.div>
+          ) : null}
 
           <motion.div
             variants={fadeUp}

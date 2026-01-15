@@ -6,6 +6,8 @@ import Container from "@/components/layout/Container";
 import { motion } from "framer-motion";
 import MedicalIASection from "@/components/case-studies/sections/MedicalIASection";
 import { accentForSlug } from "@/app/lib/theme";
+import MedicalHeroMedia from "@/components/case-studies/media/MedicalHeroMedia";
+import MedicalTimelineSection from "@/components/case-studies/sections/MedicalTimelineSection";
 
 type Props = { project: Project };
 
@@ -21,6 +23,7 @@ export default function MedicalOfficeCaseStudy({ project }: Props) {
       project={project}
       accentClassName={theme.text}
       glowClassName={theme.glow}
+      heroMedia={<MedicalHeroMedia />}
     >
       <section className="pb-24">
         <Container>
@@ -96,6 +99,7 @@ export default function MedicalOfficeCaseStudy({ project }: Props) {
         </Container>
       </section>
       <MedicalIASection />
+      <MedicalTimelineSection />
     </CaseStudyShell>
   );
 }
