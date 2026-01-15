@@ -13,6 +13,8 @@ export default function RouteOverlayTransition() {
     if (reduceMotion) return;
 
     const run = async () => {
+      controls.stop();
+      controls.set({ opacity: 0 });
       await controls.start({
         opacity: 0.12,
         transition: { duration: 0.12, ease: [0.22, 1, 0.36, 1] },
@@ -25,6 +27,10 @@ export default function RouteOverlayTransition() {
     };
 
     run();
+    return () => {
+      controls.stop();
+      controls.set({ opacity: 0 });
+    };
   }, [pathname, controls, reduceMotion]);
 
   if (reduceMotion) return null;

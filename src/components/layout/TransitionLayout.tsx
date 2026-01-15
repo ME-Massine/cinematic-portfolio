@@ -23,7 +23,10 @@ export default function TransitionLayout({
         exit: { opacity: 0, y: -14, filter: "blur(8px)" },
       };
 
-  console.log("TransitionLayout mounted", pathname);
+  const transition = {
+    duration: reduceMotion ? 0.2 : 0.55,
+    ease: [0.22, 1, 0.36, 1] as const,
+  };
 
   return (
     <AnimatePresence mode="wait" initial={false}>
@@ -33,7 +36,7 @@ export default function TransitionLayout({
         initial="initial"
         animate="animate"
         exit="exit"
-        transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
+        transition={transition}
         style={{ willChange: "transform, opacity, filter" }}
       >
         {children}
